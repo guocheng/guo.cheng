@@ -1,0 +1,72 @@
+- var scripts = getBlock('scripts')
+- var styles = getBlock('styles')
+
+//- jQuery
+- scripts.add(["/site/jquery/dist/jquery.min.js"])
+
+//- Bootstrap
+- styles.add(["/site/bootstrap/dist/css/bootstrap.min.css"])
+- scripts.add(["/site/bootstrap/dist/js/bootstrap.min.js"])
+
+//- User
+- styles.add(["/styles/style.css"])
+
+doctype html
+html(lang="en")
+
+    //- Meta
+    meta(charset="utf-8")
+    meta(http-equiv="content-type", content="text/html; charset=utf-8")
+
+    //-
+      Use the .htaccess and remove these lines to avoid edge case issues.
+      More info: h5bp.com/i/378
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+
+    //- Our site title and description
+    title= getPreparedTitle()
+    meta(name="description", content=getPreparedDescription())
+    meta(name="keywords", content=getPreparedKeywords())
+    meta(name="author", content=site.author || '')
+
+    //- Output DocPad produced meta elements
+    != getBlock('meta').toHTML()
+
+    //- Mobile viewport optimized: h5bp.com/viewport
+    meta(name="viewport", content="width=device-width")
+
+    //- Icons
+    link(rel="shortcut icon", href="/ico/favicon.ico")
+    link(rel="apple-touch-icon-precomposed", sizes="144x144", href="/ico/apple-touch-icon-144x144.png")
+    link(rel="apple-touch-icon-precomposed", sizes="114x114", href="/ico/apple-touch-icon-114x114.png")
+    link(rel="apple-touch-icon-precomposed", sizes="72x72", href="/ico/apple-touch-icon-72x72.png")
+    link(rel="apple-touch-icon-precomposed", href="/ico/apple-touch-icon-57x57.png")
+
+    //- Shims: IE6-8 support of HTML5 elements
+    //if lt IE 9
+      script(async src="http://html5shim.googlecode.com/svn/trunk/html5.js")
+
+    // Styles
+    != styles.toHTML()
+
+    body
+        section.left
+            header
+                div
+                    a(href="localhost:9778")
+                        img(src="/ico/apple-touch-icon-72x72.png")
+                    h2
+                        a(href="localhost:9778") Cheng Guo
+                p.description Code  ×  Design
+                a(href="localhost:9778/about.html" style="border-bottom: 1px dashed #AAA;padding-bottom: 1px;") [ About ]
+                <br />
+                div(style="margin-top:15px")
+                    p.disclaimer Powered by
+                        a(href="http://docpad.org/")&nbsp;DocPad
+                        <br /> Designed by
+                        a(href="http://zihua.li/")&nbsp;Luin
+        section.right#content
+            .inner
+                != content
+
+        != scripts.toHTML()

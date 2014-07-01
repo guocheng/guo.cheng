@@ -55,7 +55,7 @@ a:hover{
 }
 
 .right{
-    margin-left: 30%;
+    margin-left: 25%;
 }
 
 .inner{
@@ -83,5 +83,9 @@ body{
       right: 0;
       left: 0;
       padding: 50px 10%;
+    }
+
+    .right {
+      margin-left: 0;
     }
 }

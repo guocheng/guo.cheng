@@ -11,7 +11,8 @@
     "docpad-plugin-highlightjs": "~2.2.2",
     "docpad-plugin-jade": "~2.7.0",
     "docpad-plugin-livereload": "~2.6.0",
-    "docpad-plugin-marked": "~2.2.1"
+    "docpad-plugin-marked": "~2.2.1",
+    "docpad-plugin-services": "~2.6.0"
   },
   "main": "node_modules/docpad/bin/docpad-server"
 }

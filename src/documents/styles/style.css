@@ -45,6 +45,18 @@
     text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
 }
 
+.menu_list ul{
+  list-style: none;
+}
+
+.menu_list a{
+  font-size: 20pt;
+}
+
+.menu_list_title{
+  font-family: 'Microsoft Yahei', sans-serif;
+}
+
 a:hover{
     text-decoration: none;
     color: rgb(66,139,202);
